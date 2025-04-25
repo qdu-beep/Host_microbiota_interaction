@@ -1,5 +1,5 @@
 # Host_microbiome_genetic_architecture
- The analysis code for disect the genetic architecture behind microbiome abundance and host interaction.
+ The analysis code for dissecting the genetic architecture of microbiota in phylloplane and rhizosphere of Nicotiana tabacum
 
 
 ### Comparison of rhizosphere and phyllosphere microbial community composition for Nicotiana tabacum
@@ -22,7 +22,7 @@ The effect of microbiota and their sub-communities.
 ![Alt text](Figure4.png)
 Genetic variants associated with agronomic traits and microbial composition.
 
-### Microbiomes improve genome selection accuracy
+### Microbial community composition improve genome selection accuracy
 
 ![Alt text](Figure5.png)
  Genome selection accuracy results.
