@@ -2,7 +2,7 @@
  The analysis code for dissecting the genetic architecture of microbiota in phylloplane and rhizosphere of Nicotiana tabacum
 
 
-### Comparison of rhizosphere and phyllosphere microbial community composition for Nicotiana tabacum
+### Comparison of rhizosphere and phyllosphere microbial composition for Nicotiana tabacum
 
 ![fig1](https://github.com/user-attachments/assets/d9424f85-a7de-4664-886f-cf23dbb67e0f)
 Analyses of microbial composition and function between the rhizosphere and phyllosphere.
@@ -12,7 +12,7 @@ Analyses of microbial composition and function between the rhizosphere and phyll
 
 ![Alt text](Figure2.png)
 The genetic architecture of phyllosphere and rhizosphere microbiota.
-### Microbial community composition is associated with agronomic traits variation
+### Microbial composition is associated with agronomic traits variation
 
 ![Alt text](Figure3.png)
 The effect of microbiota and their sub-communities.
@@ -22,7 +22,7 @@ The effect of microbiota and their sub-communities.
 ![Alt text](Figure4.png)
 Genetic variants associated with agronomic traits and microbial composition.
 
-### Microbial community composition improve genome selection accuracy
+### Microbial composition improve genome selection accuracy
 
 ![Alt text](Figure5.png)
  Genome selection accuracy results.
