@@ -2,32 +2,27 @@
  The analysis code for disect the genetic architecture behind microbiome abundance and host interaction.
 
 
-###第1节标题
+### Comparison of rhizosphere and phyllosphere microbial community composition for Nicotiana tabacum
 
-第1节内容
+![fig1](https://github.com/user-attachments/assets/d9424f85-a7de-4664-886f-cf23dbb67e0f)
+Analyses of microbial composition and function between the rhizosphere and phyllosphere.
 
-![记得放fig1](Figure1.png)
 
-###第2节标题
-
-第2节内容
+### Genetic determination of the phyllosphere and rhizosphere microbial composition 
 
 ![Alt text](Figure2.png)
-
-###第3节标题
-
-第3节内容
+The genetic architecture of phyllosphere and rhizosphere microbiota.
+### Microbial community composition is associated with agronomic traits variation
 
 ![Alt text](Figure3.png)
+The effect of microbiota and their sub-communities.
 
-###第4节标题
-
-第4节内容
+### Colocalization of genetic variants associated with microbiota and agronomic traits
 
 ![Alt text](Figure4.png)
+Genetic variants associated with agronomic traits and microbial composition.
 
-###第5节标题
-
-第5节内容
+### Microbiomes improve genome selection accuracy
 
 ![Alt text](Figure5.png)
+ Genome selection accuracy results.
