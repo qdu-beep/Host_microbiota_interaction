@@ -112,6 +112,7 @@ g=g%>%insert_left(group, width = 0.02)
 ggsave(g,filename="Writing//V1_24.09.29//Fig3//3A.pdf",width=12,height=12)
 
 # 3B MWAS -----------------------------------------------------------------
+# codes:24.07.01_MWAS_rawPhe.r155
 library(RColorBrewer)
 leaf_p=data.frame(leaf_mwas$P)
 leaf_p=leaf_p[names(phe_man),]
@@ -239,7 +240,9 @@ for(i in 1:ncol(root_p)){
 }
 write.table(mwas_info,"Writing//V1_24.09.29//STable//S6.txt",quote = F,row.names = F,col.names = T,sep = "\t")
 table(phe_info[mwas_info$Trait,"type"])
+# 3D 24.08.09_micro_net.r  line134
 # 3E netwrok pve ----------------------------------------------------------
+#Fig 3E netPVE 24.08.09_micro_net.r line 227
 library(microeco)
 library(ggridges)
 library(ggpubr)
