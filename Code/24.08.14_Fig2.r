@@ -1,4 +1,4 @@
-# h2 distribution with hglm ---------------------------------------------------------
+# ？hglm not GCTA? h2 distribution with hglm ---------------------------------------------------------
 library(hglm)
 pb=txtProgressBar(style=3)
 root_h2=c()
@@ -36,7 +36,7 @@ hist(root_h2,breaks=seq(0,1,0.05),main="",xlab="Kinship heritability of rhizosph
 hist(leaf_h2,breaks=seq(0,1,0.05),main="",xlab="Kinship heritability of leaf microbiome",ylab="Frequency (counts)")
 dev.off()
 
-### correlation of h2 and finded loci
+### 没用correlation of h2 and finded loci
 a=apply(root_gwa_sum,1,sum)
 inter=intersect(names(a),names(root_h2))
 plot(root_h2[inter],a[inter])
@@ -46,7 +46,7 @@ inter=intersect(names(b),names(leaf_h2))
 plot(leaf_h2[inter],b[inter])
 
 
-# mental ------------------------------------------------------------------
+# 没用mental ------------------------------------------------------------------
 
 ids=intersect(row.names(root_50),row.names(snp_grm))
 a=root_50[ids,]
