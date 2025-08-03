@@ -131,6 +131,9 @@ row.names(sample_info)=sample_info$SampleID
 
 phe_data_tax_all=phe_pre[all_id,]
 row.names(phe_data_tax_all)=names(all_otu_table)
+#figure 3D -------------------------------------------------------
+#using microeco package and Weighted Gene Co-expression Network Analysis to get co-occurrence network
+
 data_micro_all=microtable$new(sample_table=sample_info,otu_table=all_otu_table,tax_table=taxonomy_table_all)
 
 
@@ -138,7 +141,7 @@ range(data_micro_all$sample_sums())
 data_micro_all$rarefy_samples(sample.size=22000)
 range(data_micro_all$sample_sums())
 
-# construct network -------------------------------------------------------
+# construct network -----
 t1<- trans_network$new(dataset = data_micro_all, cor_method = "pearson", use_WGCNA_pearson_spearman = TRUE)
 t1$cal_network(COR_p_thres = 0.05,COR_p_adjust="bonferroni")
 
@@ -221,10 +224,11 @@ module_data_p2[module_data_p>0.05]=""
 pheatmap(module_data_b,
          cluster_rows = F,cluster_cols = F,
          display_numbers = module_data_p2)
+
+#Fig 3E netPVE -------------------------------------------------
+#lm function
 #add significance mark
-
-
-# Contribution of network -------------------------------------------------
+# Contribution of network ---
 View(phe_pre)
 View(all_otu_table)
 
