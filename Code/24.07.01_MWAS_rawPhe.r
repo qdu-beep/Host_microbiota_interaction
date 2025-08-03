@@ -152,7 +152,8 @@ p%>%insert_left(group, width = 0.01)
 
 
 
-# MWAS analysis -----------------------------------------------------------
+# figure3B,3C MWAS analysis -----------------------------------------------------------
+# Linear Model for Continuous traits; Generalized Linear Model for Categorical
 library(pheatmap)
 leaf_50=data.frame(fread("Data//phe_filtered//leaf_50_nosick_NA.txt"))
 root_50=data.frame(fread("Data//phe_filtered//root_50_nosick_NA.txt"))
