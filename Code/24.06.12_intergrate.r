@@ -261,7 +261,8 @@ write.table(uncommon_snp,file="Data//PVE//uncommon_snp.txt",row.names = F,col.na
 plot(x=regions,y=rep(1,length(regions)))
 plot(x=as.numeric(names(leaf_data)),y=rep(1,length(names(leaf_data))))
 points(x=regions,y=rep(1.2,length(regions)))
-###get genetic relationship matrix (grm)
+###figure 2E PVE
+#get genetic relationship matrix (grm)
 grmfile=data.frame(fread("Data//PVE//uncommon_snp.grm.gz"),stringsAsFactors = F)
 grm_data=matrix(ncol=max(grmfile[,1]),nrow=max(grmfile[,1]))
 for(i in 1:nrow(grmfile)){
