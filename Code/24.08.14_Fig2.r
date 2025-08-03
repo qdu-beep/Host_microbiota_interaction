@@ -126,6 +126,7 @@ sum(a[,1]>10)
 
 
 # 2E PVE analysis ---------------------------------------------------------
+# codes file:24.06.12_intergrate.r264
 load("Results//PVE//24.06.17_common_snp_PVE.RData")
 
 PVE_ratio=data.frame(c(pves_leaf[,2]/(pves_leaf[,2]+pves_leaf[,3]),pves_root[,2]/(pves_root[,2]+pves_root[,3])))
@@ -173,7 +174,7 @@ ids=intersect(row.names(root_50),intersect(row.names(leaf_50),row.names(snp_grm)
 write.table(root_50[ids,],file="Writing//V1_24.09.29//STable//S1.txt",quote=F,sep="\t")
 write.table(leaf_50[ids,],file="Writing//V1_24.09.29//STable//S2.txt",quote=F,sep="\t")
 
-### get snp sumamry data
+### get snp sumamry data （GWAS results）
 all_snp=data.frame(fread("data/ASV1.mlma"))
 head(all_snp)
 all_snp=all_snp[,c(1,2,3,4,5,6)]
