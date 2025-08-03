@@ -261,7 +261,7 @@ write.table(uncommon_snp,file="Data//PVE//uncommon_snp.txt",row.names = F,col.na
 plot(x=regions,y=rep(1,length(regions)))
 plot(x=as.numeric(names(leaf_data)),y=rep(1,length(names(leaf_data))))
 points(x=regions,y=rep(1.2,length(regions)))
-###get grm
+###get genetic relationship matrix (grm)
 grmfile=data.frame(fread("Data//PVE//uncommon_snp.grm.gz"),stringsAsFactors = F)
 grm_data=matrix(ncol=max(grmfile[,1]),nrow=max(grmfile[,1]))
 for(i in 1:nrow(grmfile)){
@@ -286,7 +286,7 @@ common_snp_grm=grm_data
 
 
 ### root PVE 
-library(hglm)
+library(hglm) #Hierarchical Generalized Linear Model
 root_phe=data.frame(fread("Data//phe_filtered/root_50_nosick_NA.txt"))
 row.names(root_phe)=root_phe[,1]
 pves_root=data.frame(matrix(ncol=3,nrow=length(3:ncol(root_phe))))
