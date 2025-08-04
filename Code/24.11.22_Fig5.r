@@ -5,16 +5,17 @@ library(parallel)
 phe_five_fold_GS_fun=function(i){
   fold=3
   ids=intersect(row.names(phe_man),intersect(intersect(names(root_orm),names(leaf_orm)),names(snp_grm)))
-  phe_all=phe_pre[ids,]
-  G1=snp_grm[ids,ids]
-  G2=leaf_orm[ids,ids]
-  G3=root_orm[ids,ids]
+  phe_all=phe_pre[ids,] # 表型数据
+  G1=snp_grm[ids,ids] # SNP遗传关系矩阵
+  G2=leaf_orm[ids,ids] # 叶际微生物关系矩阵
+  G3=root_orm[ids,ids] # 根际微生物关系矩阵
   idnum=length(ids)
   sample_index=split(c(1:(idnum)),sample(rep(1:fold,rep(idnum/fold,fold))))
   phe=phe_all[,i]
   phe_save=phe
   five_list=list()
   five_list[["phe_raw"]]=phe_save
+  # 三折交叉验证
   for(j in 1:fold){
     phe=phe_save
     phe[sample_index[[j]]]=NA
@@ -23,18 +24,21 @@ phe_five_fold_GS_fun=function(i){
     Z2=c.z.hglm(G2)
     Z3=c.z.hglm(G3)
     
+    ## 全模型（SNP+叶际微生物+根际微生物）
     model=try(hglm(X=matrix(rep(1,length(phe[index]))),
                y=phe[index],
                Z=cbind(Z1[index,],Z2[index,],Z3[index,]),
                RandC=c(ncol(Z1[index,]),ncol(Z2[index,]),ncol(Z3[index,]))),silent = T)
+    ## 对照模型（仅SNP）
     model2=try(hglm(X=matrix(rep(1,length(phe[index]))),
                 y=phe[index],
                 Z=Z1[index,]),silent = T)
-    
+    ## 全模型预测值和仅SNP模型预测值
     pre_all=try(cbind(Z1,Z2,Z3)%*%model$ranef,silent = T)
     pre_all2=try(Z1%*%model2$ranef,silent = T)
     five_list[[as.character(j)]]=try(list(three_pre=pre_all,one_pre=pre_all2,index=sample_index[[j]]),silent = T)
     
+    ## 计算预测准确率（Pearson R），画图用t检验两个准确率间显著性
     info=try(paste("Times",times,"Trait",names(phe_all)[i],"Fold",fold,"Round",j,
                "R_G",cor(phe_save[sample_index[[j]]],pre_all2[sample_index[[j]]],use="pairwise.complete.obs"),
                "R_G+M",cor(phe_save[sample_index[[j]]],pre_all[sample_index[[j]]],use="pairwise.complete.obs")),silent = T)
@@ -43,6 +47,7 @@ phe_five_fold_GS_fun=function(i){
   write.table(paste(times,c(i,names(phe_man)[i]),"finished"),"info.txt",append=T,col.names=F,row.names=F)
   return(five_list)
 }
+#每个表型进行100次独立重复的三折交叉验证，减少随机分组的偏差
 for(times in 1:100){
   print(times)
   clnum<-5
