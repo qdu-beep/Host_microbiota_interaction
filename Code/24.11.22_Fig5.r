@@ -24,7 +24,7 @@ phe_five_fold_GS_fun=function(i){
     Z2=c.z.hglm(G2)
     Z3=c.z.hglm(G3)
     
-    ## 全模型（SNP+叶际微生物+根际微生物）
+    ## 全模型（SNP+叶际微生物+根际微生物），层次广义线性模型（hglm）
     model=try(hglm(X=matrix(rep(1,length(phe[index]))),
                y=phe[index],
                Z=cbind(Z1[index,],Z2[index,],Z3[index,]),
