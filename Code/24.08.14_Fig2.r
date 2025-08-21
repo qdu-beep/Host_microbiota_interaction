@@ -1,4 +1,4 @@
-# ？hglm not GCTA? h2 distribution with hglm ---------------------------------------------------------
+#h2 distribution with hglm ---------------------------------------------------------
 library(hglm)
 pb=txtProgressBar(style=3)
 root_h2=c()
